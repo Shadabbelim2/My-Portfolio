@@ -66,18 +66,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
+    const navOverlay = document.getElementById('nav-overlay');
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.section, .hero-section');
     let lastScrollY = 0, ticking = false;
 
-    function updateNavbar() {
-        if (window.scrollY > 80) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
-        navbar.style.transform = window.scrollY > lastScrollY && window.scrollY > 500 ? 'translateY(-100%)' : 'translateY(0)';
-        lastScrollY = window.scrollY; ticking = false;
+    function toggleMenu(open) {
+        const isOpen = open !== undefined ? open : !navMenu.classList.contains('active');
+        navToggle.classList.toggle('active', isOpen);
+        navMenu.classList.toggle('active', isOpen);
+        navOverlay.classList.toggle('active', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
     }
-    window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(updateNavbar); ticking = true; } });
-    navToggle.addEventListener('click', () => { navToggle.classList.toggle('active'); navMenu.classList.toggle('active'); });
-    navLinks.forEach(link => link.addEventListener('click', () => { navToggle.classList.remove('active'); navMenu.classList.remove('active'); }));
+    navToggle.addEventListener('click', () => toggleMenu());
+    navOverlay.addEventListener('click', () => toggleMenu(false));
+    navLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
 
     function updateActiveNav() {
         let current = '';

@@ -67,6 +67,7 @@ function h($str) {
                 <span class="hamburger-line"></span>
             </button>
         </div>
+        <div class="nav-overlay" id="nav-overlay"></div>
     </nav>
 
     <!-- HERO SECTION -->
