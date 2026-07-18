@@ -328,7 +328,6 @@ function h($str) {
                 <div class="section-line"></div>
             </div>
 
-            <?php $firstProject = true; ?>
             <?php foreach ($data['projects'] as $projIndex => $project): ?>
             <?php if (!empty($project['featured'])): ?>
             <!-- Featured Project Card -->
@@ -393,9 +392,12 @@ function h($str) {
                     </div>
                 </div>
             </div>
-            <?php else: ?>
-            <!-- Regular Project Card -->
-            <div class="projects-grid" <?= $firstProject ? '' : '' ?>>
+            <?php endif; ?>
+            <?php endforeach; ?>
+
+            <div class="projects-grid">
+                <?php foreach ($data['projects'] as $projIndex => $project): ?>
+                <?php if (empty($project['featured'])): ?>
                 <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="<?= $projIndex * 150 ?>" style="--project-color: <?= h($project['color']) ?>">
                     <div class="project-card-glow"></div>
                     <div class="project-header">
@@ -416,10 +418,9 @@ function h($str) {
                         <?php endforeach; ?>
                     </div>
                 </div>
+                <?php endif; ?>
+                <?php endforeach; ?>
             </div>
-            <?php endif; ?>
-            <?php $firstProject = false; ?>
-            <?php endforeach; ?>
         </div>
     </section>
 
@@ -513,6 +514,7 @@ function h($str) {
                         <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <h3>Location</h3>
                         <a href="https://www.google.com/maps/search/<?= urlencode($data['location']) ?>" target="_blank" rel="noopener"><?= h($data['location']) ?></a>
+                    </div>
                 </div>
                 <div class="contact-form-wrapper" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
                     <div class="contact-form-card glass-card">
