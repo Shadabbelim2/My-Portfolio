@@ -327,8 +327,75 @@ function h($str) {
                 <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
                 <div class="section-line"></div>
             </div>
-            <div class="projects-grid">
-                <?php foreach ($data['projects'] as $projIndex => $project): ?>
+
+            <?php $firstProject = true; ?>
+            <?php foreach ($data['projects'] as $projIndex => $project): ?>
+            <?php if (!empty($project['featured'])): ?>
+            <!-- Featured Project Card -->
+            <div class="featured-project" data-aos="fade-up" data-aos-delay="0">
+                <div class="featured-project-inner">
+                    <div class="featured-project-bg-glow"></div>
+                    <div class="featured-project-header">
+                        <span class="featured-badge"><i class="fas fa-star"></i> Featured Project</span>
+                        <span class="featured-timeline"><i class="fas fa-clock"></i> <?= h($project['period']) ?></span>
+                    </div>
+                    <div class="featured-project-body">
+                        <div class="featured-project-info">
+                            <h3 class="featured-project-title"><?= h($project['title']) ?></h3>
+                            <p class="featured-project-tagline"><?= h($project['tagline']) ?></p>
+                            <p class="featured-project-desc"><?= h($project['description']) ?></p>
+                            <div class="featured-project-role">
+                                <span><i class="fas fa-user-tie"></i> Role: <?= h($project['role']) ?></span>
+                            </div>
+                            <div class="featured-project-stats">
+                                <?php foreach ($project['stats'] as $stat): ?>
+                                <div class="featured-stat">
+                                    <i class="<?= h($stat['icon']) ?>"></i>
+                                    <span class="featured-stat-value"><?= h($stat['value']) ?></span>
+                                    <span class="featured-stat-label"><?= h($stat['label']) ?></span>
+                                </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="featured-project-features">
+                                <?php foreach ($project['features'] as $feature): ?>
+                                <span class="featured-feature-tag"><i class="fas fa-check-circle"></i> <?= h($feature) ?></span>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="featured-project-tech">
+                                <?php foreach ($project['technologies'] as $tech): ?>
+                                <span class="featured-tech-badge"><?= h($tech) ?></span>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="featured-project-buttons">
+                                <a href="<?= h($project['url']) ?>" target="_blank" rel="noopener" class="btn btn-primary featured-btn">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <?php if ($project['github'] !== '#'): ?>
+                                <a href="<?= h($project['github']) ?>" target="_blank" rel="noopener" class="btn btn-outline featured-btn">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <?php else: ?>
+                                <span class="btn btn-outline featured-btn disabled-btn">
+                                    <i class="fab fa-github"></i> Coming Soon
+                                </span>
+                                <?php endif; ?>
+                                <?php if ($project['casestudy'] !== '#'): ?>
+                                <a href="<?= h($project['casestudy']) ?>" target="_blank" rel="noopener" class="btn btn-outline featured-btn">
+                                    <i class="fas fa-file-alt"></i> Case Study
+                                </a>
+                                <?php else: ?>
+                                <span class="btn btn-outline featured-btn disabled-btn">
+                                    <i class="fas fa-file-alt"></i> Coming Soon
+                                </span>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php else: ?>
+            <!-- Regular Project Card -->
+            <div class="projects-grid" <?= $firstProject ? '' : '' ?>>
                 <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="<?= $projIndex * 150 ?>" style="--project-color: <?= h($project['color']) ?>">
                     <div class="project-card-glow"></div>
                     <div class="project-header">
@@ -349,8 +416,10 @@ function h($str) {
                         <?php endforeach; ?>
                     </div>
                 </div>
-                <?php endforeach; ?>
             </div>
+            <?php endif; ?>
+            <?php $firstProject = false; ?>
+            <?php endforeach; ?>
         </div>
     </section>
 
@@ -447,7 +516,8 @@ function h($str) {
                 </div>
                 <div class="contact-form-wrapper" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
                     <div class="contact-form-card glass-card">
-                        <form action="send-mail.php" method="POST" id="contact-form">
+                        <form action="/" method="POST" id="contact-form" netlify name="contact" netlify-honeypot="bot-field">
+                            <input type="hidden" name="bot-field" style="display:none">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="contact-name"><i class="fas fa-user"></i> Your Name</label>
