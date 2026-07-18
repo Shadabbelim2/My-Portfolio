@@ -238,32 +238,33 @@ function h($str) {
                 <h2 class="section-title">Work <span class="gradient-text">Experience</span></h2>
                 <div class="section-line"></div>
             </div>
-            <div class="experience-grid">
+            <div class="exp-timeline">
                 <?php foreach ($data['experience'] as $expIndex => $exp): ?>
-                <div class="experience-card glass-card" data-aos="fade-up" data-aos-delay="<?= $expIndex * 150 ?>">
-                    <div class="exp-card-accent"></div>
-                    <div class="exp-card-header">
-                        <div class="exp-icon-wrapper"><i class="fas fa-building"></i></div>
-                        <div class="exp-info">
-                            <h3 class="exp-role"><?= h($exp['role']) ?></h3>
-                            <p class="exp-company"><?= h($exp['company']) ?></p>
-                            <span class="exp-period"><i class="fas fa-calendar-alt"></i> <?= h($exp['period']) ?></span>
+                <div class="exp-timeline-item" data-aos="fade-up" data-aos-delay="<?= $expIndex * 200 ?>">
+                    <div class="exp-timeline-marker" style="--marker-gradient: <?= h($exp['gradient']) ?>">
+                        <div class="exp-timeline-dot">
+                            <i class="<?= h($exp['logo']) ?>"></i>
                         </div>
+                        <div class="exp-timeline-line"></div>
                     </div>
-                    <?php if (count($exp['responsibilities']) > 0): ?>
-                    <div class="exp-responsibilities">
-                        <h4>Key Responsibilities:</h4>
-                        <ul>
-                            <?php foreach ($exp['responsibilities'] as $resp): ?>
-                            <li><i class="fas fa-check-circle"></i><span><?= h($resp) ?></span></li>
+                    <div class="exp-timeline-card glass-card" style="--card-gradient: <?= h($exp['gradient2']) ?>">
+                        <div class="exp-timeline-card-glow"></div>
+                        <div class="exp-card-top">
+                            <span class="exp-duration-badge"><i class="fas fa-calendar-alt"></i> <?= h($exp['period']) ?></span>
+                        </div>
+                        <h3 class="exp-role"><?= h($exp['role']) ?></h3>
+                        <p class="exp-company"><i class="fas fa-building"></i> <?= h($exp['company']) ?></p>
+                        <div class="exp-divider"></div>
+                        <ul class="exp-description-list">
+                            <?php foreach ($exp['description'] as $desc): ?>
+                            <li><i class="fas fa-arrow-right"></i><span><?= h($desc) ?></span></li>
                             <?php endforeach; ?>
                         </ul>
-                    </div>
-                    <?php endif; ?>
-                    <div class="exp-skills-tags">
-                        <?php foreach ($exp['skills'] as $skill): ?>
-                        <span class="skill-tag"><?= h($skill) ?></span>
-                        <?php endforeach; ?>
+                        <div class="exp-tech-badges">
+                            <?php foreach ($exp['technologies'] as $tech): ?>
+                            <span class="exp-tech-badge"><?= h($tech) ?></span>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
                 <?php endforeach; ?>
