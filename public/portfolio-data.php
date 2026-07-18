@@ -6,6 +6,11 @@ return [
     'email' => 'Shadabbelim008@gmail.com',
     'phone' => '+91 8827976129',
     'location' => 'Indore, Madhya Pradesh, India',
+    'social' => [
+        'linkedin' => 'https://www.linkedin.com/in/shadabbelim/',
+        'github' => 'https://github.com/Shadabbelim2',
+        'fiverr' => 'https://www.fiverr.com/shadabbelim',
+    ],
     'about' => 'I am a dedicated MCA graduate with a strong foundation in programming and software engineering. My expertise includes Java, Python, Django, PHP, Laravel, JavaScript, SQL, MongoDB and modern web technologies. I have worked on multiple real-world projects, ranging from responsive websites to machine learning applications.',
     'about_extra' => 'I am passionate about creating user-friendly applications, learning emerging technologies, and contributing to innovative software solutions. My experience in web development and project management has strengthened my problem-solving abilities and teamwork skills.',
     'education' => [
@@ -26,9 +31,28 @@ return [
     ],
     'experience' => [
         [
+            'role' => 'Software Engineer',
+            'company' => 'Chapter247 Infotech Pvt. Ltd.',
+            'period' => 'Apr 2026 – Present',
+            'logo' => 'fas fa-briefcase',
+            'gradient' => 'linear-gradient(135deg, #00C9A7, #6C63FF)',
+            'gradient2' => 'linear-gradient(135deg, #00C9A7, #6C63FF)',
+            'description' => [
+                'Develop and maintain enterprise-grade web applications using Laravel, PHP, and MySQL.',
+                'Design scalable backend architectures following Clean Architecture, SOLID Principles, and Repository Pattern.',
+                'Build secure REST APIs with Role-Based Access Control (RBAC) and authentication systems.',
+                'Optimize application performance by improving SQL queries, indexing, caching, and backend logic.',
+                'Develop and maintain complex modules including Claim Management, User Management, Permission Management, Reports, and Document Management.',
+                'Collaborate with cross-functional teams in Agile/Scrum environments to deliver high-quality software.',
+                'Participate in code reviews, debugging, testing, deployment, and production issue resolution.',
+                'Work extensively with Git, CI/CD workflows, API integrations, and enterprise software development best practices.',
+            ],
+            'technologies' => ['Laravel', 'PHP', 'MySQL', 'REST API', 'Git', 'JavaScript', 'HTML', 'CSS', 'Bootstrap', 'Repository Pattern', 'SOLID Principles'],
+        ],
+        [
             'role' => 'Full Stack Developer (Laravel / PHP Developer)',
             'company' => 'Exaalgia IT Solutions',
-            'period' => 'Feb 2025 – Present',
+            'period' => 'Feb 2025 – Apr 2026',
             'logo' => 'fas fa-laptop-code',
             'gradient' => 'var(--gradient-primary)',
             'gradient2' => 'linear-gradient(135deg, #6C63FF, #00C9A7)',
@@ -43,7 +67,7 @@ return [
                 'Managed Git workflows, pull requests, code reviews, deployments, and bug fixing.',
                 'Worked on enterprise claim management modules, user management, permission systems, reporting, and backend optimization.',
             ],
-            'technologies' => ['Laravel', 'PHP', 'MySQL', 'REST API', 'Git', 'JavaScript', 'HTML', 'CSS', 'Bootstrap'],
+            'technologies' => ['Laravel', 'PHP', 'MySQL', 'REST API', 'JavaScript', 'HTML', 'CSS', 'Bootstrap', 'Git'],
         ],
         [
             'role' => 'Python Backend Developer Intern',

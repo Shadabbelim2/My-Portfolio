@@ -119,9 +119,10 @@ function h($str) {
                     </a>
                 </div>
                 <div class="hero-socials">
+                    <a href="<?= h($data['social']['linkedin']) ?>" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="<?= h($data['social']['github']) ?>" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="<?= h($data['social']['fiverr']) ?>" target="_blank" rel="noopener" class="social-link" aria-label="Fiverr"><i class="fas fa-star"></i></a>
                     <a href="mailto:<?= h($data['email']) ?>" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div class="hero-right" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
@@ -441,7 +442,12 @@ function h($str) {
                     <div class="contact-info-card glass-card">
                         <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <h3>Location</h3>
-                        <p><?= h($data['location']) ?></p>
+                        <a href="https://www.google.com/maps/search/<?= urlencode($data['location']) ?>" target="_blank" rel="noopener"><?= h($data['location']) ?></a>
+                    </div>
+                    <div class="contact-info-card glass-card">
+                        <div class="contact-info-icon"><i class="fas fa-star"></i></div>
+                        <h3>Fiverr</h3>
+                        <a href="<?= h($data['social']['fiverr']) ?>" target="_blank" rel="noopener">Hire me on Fiverr</a>
                     </div>
                 </div>
                 <div class="contact-form-wrapper" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
@@ -503,10 +509,10 @@ function h($str) {
                 <div class="footer-social">
                     <h4>Connect</h4>
                     <div class="social-links">
+                        <a href="<?= h($data['social']['linkedin']) ?>" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="<?= h($data['social']['github']) ?>" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="mailto:<?= h($data['email']) ?>" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="<?= h($data['social']['fiverr']) ?>" target="_blank" rel="noopener" aria-label="Fiverr"><i class="fas fa-star"></i></a>
                     </div>
                 </div>
             </div>
