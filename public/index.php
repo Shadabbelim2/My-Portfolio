@@ -15,6 +15,8 @@ function h($str) {
     <meta name="theme-color" content="#6C63FF">
     <title>Shadab Belim | Software Engineer & Full Stack Developer</title>
 
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -121,7 +123,6 @@ function h($str) {
                 <div class="hero-socials">
                     <a href="<?= h($data['social']['linkedin']) ?>" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="<?= h($data['social']['github']) ?>" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="<?= h($data['social']['fiverr']) ?>" target="_blank" rel="noopener" class="social-link" aria-label="Fiverr"><i class="fas fa-star"></i></a>
                     <a href="mailto:<?= h($data['email']) ?>" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
@@ -443,12 +444,6 @@ function h($str) {
                         <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <h3>Location</h3>
                         <a href="https://www.google.com/maps/search/<?= urlencode($data['location']) ?>" target="_blank" rel="noopener"><?= h($data['location']) ?></a>
-                    </div>
-                    <div class="contact-info-card glass-card">
-                        <div class="contact-info-icon"><i class="fas fa-star"></i></div>
-                        <h3>Fiverr</h3>
-                        <a href="<?= h($data['social']['fiverr']) ?>" target="_blank" rel="noopener">Hire me on Fiverr</a>
-                    </div>
                 </div>
                 <div class="contact-form-wrapper" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
                     <div class="contact-form-card glass-card">
@@ -512,7 +507,6 @@ function h($str) {
                         <a href="<?= h($data['social']['linkedin']) ?>" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="<?= h($data['social']['github']) ?>" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="mailto:<?= h($data['email']) ?>" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="<?= h($data['social']['fiverr']) ?>" target="_blank" rel="noopener" aria-label="Fiverr"><i class="fas fa-star"></i></a>
                     </div>
                 </div>
             </div>

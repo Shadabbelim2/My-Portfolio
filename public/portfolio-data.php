@@ -9,7 +9,6 @@ return [
     'social' => [
         'linkedin' => 'https://www.linkedin.com/in/shadabbelim/',
         'github' => 'https://github.com/Shadabbelim2',
-        'fiverr' => 'https://www.fiverr.com/shadabbelim',
     ],
     'about' => 'I am a dedicated MCA graduate with a strong foundation in programming and software engineering. My expertise includes Java, Python, Django, PHP, Laravel, JavaScript, SQL, MongoDB and modern web technologies. I have worked on multiple real-world projects, ranging from responsive websites to machine learning applications.',
     'about_extra' => 'I am passionate about creating user-friendly applications, learning emerging technologies, and contributing to innovative software solutions. My experience in web development and project management has strengthened my problem-solving abilities and teamwork skills.',
